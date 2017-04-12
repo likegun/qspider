@@ -2,7 +2,6 @@
 const co = require('co');
 
 const debug = require('debug')('debug');
-const debug_error = require('debug')('error');
 
 const Registration = require('src/models/Registration');
 const Heartbeat = require('src/models/Heartbeat');
