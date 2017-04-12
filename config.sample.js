@@ -1,5 +1,5 @@
 module.exports = {
-  'main_port': 3000,
+  'master_port': 3000,
   'worker_port': 3001,
   'heartbeat_interval': 5000,
   'get_job_interval': 5000,

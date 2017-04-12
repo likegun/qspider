@@ -3,7 +3,6 @@ const co = require('co');
 const child_process = require('child_process');
 
 const debug = require('debug')('debug');
-const debug_error = require('debug')('error');
 
 const Registration = require('src/models/Registration');
 const config = require('src/common/get-config');
@@ -31,7 +30,12 @@ setInterval(() => {
     .exec();
 
     for(const registration of registrations) {
-      const forked_child_process = child_process.fork('src/worker.js', [], {
+      const Job = require(registration.job_file);
+      const job = new Job();
+      if(! ( yield job.canStart() ))
+        continue;
+
+      const forked_child_process = child_process.fork('index.js', [], {
         env: {
           registration: JSON.stringify(registration)
         }

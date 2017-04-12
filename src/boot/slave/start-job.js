@@ -1,10 +1,5 @@
 'use strict';
-const path = require('path');
 const co = require('co');
-const debug_error = require('debug')('error');
-require('app-module-path').addPath(path.resolve(__dirname, '..'));
-
-const Registration = require('src/models/Registration');
 
 co(function *() {
   const registration = JSON.parse(process.env.registration);
