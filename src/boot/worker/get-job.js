@@ -3,14 +3,14 @@ const co = require('co');
 const os = require('os');
 
 const debug = require('debug')('debug');
-const debug_error = require('debug')('error');
 
 const Registration = require('src/models/Registration');
 const config = require('src/common/get-config');
 const identifying = require('src/common/get-identifying');
 const CONST = require('src/const');
 
-const available_cpu_count = os.cpus().length - 1;
+// const available_cpu_count = os.cpus().length - 1;
+const available_cpu_count = 8;
 let last_get_job_over = true;
 
 setInterval(() => {

@@ -9,7 +9,7 @@ const FollowUserListSchema = new mongoose.Schema({
     comment: '获取关注用户分页中一页数据的url',
     required: true
   },
-  first_job_status: {
+  second_job_status: {
     type: String,
     comment: '爬取状态',
     required: true,

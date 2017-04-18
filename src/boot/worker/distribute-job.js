@@ -37,7 +37,8 @@ setInterval(() => {
 
       const forked_child_process = child_process.fork('index.js', [], {
         env: {
-          registration: JSON.stringify(registration)
+          registration: JSON.stringify(registration),
+          role: CONST.ROLES[2]
         }
       });
 
