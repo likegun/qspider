@@ -7,7 +7,7 @@ co(function *() {
   const registration = JSON.parse(process.env.registration);
   const Job = require(registration.job_file);
 
-  const job = new Job();
+  const job = new Job(registration);
   yield job.start();
 
   process.exit(0);

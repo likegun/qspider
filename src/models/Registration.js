@@ -37,6 +37,18 @@ const RegistrationSchema = new mongoose.Schema({
     comment: '任务状态',
     required: true,
     default: CONST.JOB_STATUS[0]
+  },
+  relyJobs: {
+    type: [String],
+    comment: '所依赖的job_file数组,只有这些job结束了，此job才能结束',
+    required: false,
+    default: []
+  },
+  beforeJobs: {
+    type: [String],
+    comment: '所依赖的job_file数组,只有这些job结束了，此job蔡能开始',
+    required: false,
+    default: []
   }
 });
 

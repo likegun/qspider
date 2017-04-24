@@ -29,10 +29,12 @@ setInterval(() => {
     })
     .exec();
 
+
     for(const registration of registrations) {
       const Job = require(registration.job_file);
-      const job = new Job();
-      if(! ( yield job.canStart() ))
+      const job = new Job(registration);
+      
+      if(job.canStart && ! ( yield job.canStart() ))
         continue;
 
       const forked_child_process = child_process.fork('index.js', [], {

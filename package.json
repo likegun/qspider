@@ -4,7 +4,9 @@
   "description": "",
   "master": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asMaster": "cross-env role=master DEBUG=debug,error node index.js",
+    "asWorker": "cross-env role=worker DEBUG=debug,error node index.js"
   },
   "author": "",
   "license": "ISC",
