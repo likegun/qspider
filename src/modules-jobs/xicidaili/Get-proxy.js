@@ -20,7 +20,7 @@ class GetProxy extends Job{
     return co(function *() {
       while(self.run) {
         //防止被封
-        yield sleep(PROXY_CONST.REQUEST_SLEEP || 5000);
+        yield sleep(PROXY_CONST.REQUEST_SLEEP || 20000);
 
         const url = yield Url.findOneAndUpdate({
           status: CONST.JOB_STATUS[0]
